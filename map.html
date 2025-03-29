@@ -5,9 +5,9 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8">
-  <title>Home | Transnet</title>
-  <meta name="description" content="HarlonTransit is the government-owned public transport operator within the city of Harlon.">
-  <meta property="og:title" content="Transnet">
+  <title>Train network map | Transnet</title>
+  <meta name="description" content="Your local transport operator for Thornsbury">
+  <meta property="og:title" content="Train network map | Transnet">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta name="og:description" content="Your local transport operator for Thornsbury">
@@ -95,97 +95,30 @@
   </div>
   
 </head>
-
 <body>
-  
-  <div class="nsw-hero-banner nsw-hero-banner--dark">
+    <div class="nsw-hero-banner nsw-hero-banner--dark">
     <div class="nsw-hero-banner__container">
       <div class="nsw-hero-banner__wrapper">
         <div class="nsw-hero-banner__content">
-          <h1>Future Proof 2025</h1>
-          <p class="nsw-intro">We're working on improving every aspect of public transport, so it can be future proofed for the next 10 years</p>
-          <a href="https://discord.gg/qMmk8MuEBz" class="nsw-button nsw-button--white" target="_blank" rel="noreferrer noopener">Find out more (article coming soon)</a>
+          <h1>Train network map</h1>
+          <p class="nsw-intro">Transnet's official suburban and regional railway map</p>
         </div>
         <div class="nsw-hero-banner__box">
-          <img class="nsw-hero-banner__image" src="/img/future-proof.jpg" alt="Image of Transnet McKian's bus 1040 on a Rail Replacement service.">
+          <img class="nsw-hero-banner__image" src="./img/net-map.png" alt="Image of a HarlonTransit bus." />
         </div>
       </div>
     </div>
   </div>
 
-<div class="nsw-m-right-md nsw-m-left-md">
-<div class="nsw-p-top-sm">
-<h1>Quick Links</h1>
+<div class="nsw-m-right-md nsw-m-left-md nsw-p-top-md nsw-p-bottom-md">
+<div id="map_embed">
+    <script src="./js/pdfobject.js"></script>
+    <script>PDFObject.embed("./pdf/Thornsbury%20train%20network%20map%20-%20April%202025.pdf", "#map_embed");</script>
+    <style>
+        .pdfobject-container { height: 30rem; }
+    </style>
 </div>
-  <div class="nsw-grid">
-    <div class="nsw-col nsw-col-md-6 nsw-col-lg-4">
-      <div class="nsw-card">
-        <div class="nsw-card__image">
-          <img src="/img/net-map.png" alt="Train speeding past with map lines and text">
-        </div>
-        <div class="nsw-card__content">
-          <div class="nsw-card__title">
-            <a href="/map">Train network map</a>
-          </div>
-          <div class="nsw-card__copy">The official suburban and regional railway map</div>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </div>
-      </div>
-    </div>
-    <div class="nsw-col nsw-col-md-6 nsw-col-lg-4">
-      <div class="nsw-card">
-        <div class="nsw-card__image">
-          <img src="/img/trav-sm.png" alt="Hand holding up a 2025 issued TravelSmart card">
-        </div>
-        <div class="nsw-card__content">
-          <div class="nsw-card__title">
-            <a href="./tripplanner/">TravelSmart & SmartNet fares</a>
-          </div>
-          <div class="nsw-card__copy">View current fares for TravelSmart cards & SmartNet paper tickets.</div>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="nsw-col nsw-col-md-6 nsw-col-lg-4">
-      <div class="nsw-card">
-        <div class="nsw-card__image">
-          <img src="./img/dynmap.png" alt="Screenshot of Harlon City Server's dynmap">
-        </div>
-        <div class="nsw-card__content">
-          <div class="nsw-card__title">
-            <a href="https://dynmap.harlonserver.net" target="_blank" rel="noopener noreferrer">Dynmap</a>
-          </div>
-          <div class="nsw-card__copy">Find stations, landmarks and more on the server and track your location in real time.</div>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </div>
-      </div>
-    </div> --> 
-  </div>
-  
-  <h1>Our operators</h1>
-  <div class="nsw-link-list">
-    <ul>
-      <li>
-        <a href="https://mckians.com" target="_blank" rel="noopener noreferrer">
-          <span>McKian's Bus Lines</span>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </a>
-      </li>
-      <!-- <li>
-        <a href="#">
-          <span>Harlonian National (for all intercity and national rail and coach services)</span>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span>Sealand Area Rapid Transit (SART)</span>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">east</span>
-        </a>
-      </li> -->
-    </ul>
-  </div>
-  
+</div>
 
   <br>
 <script src="https://cdn.jsdelivr.net/npm/nsw-design-system@3/dist/js/main.min.js"></script>
