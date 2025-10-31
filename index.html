@@ -37,7 +37,34 @@
 <body>
   <div>
     <img src="/soon.png" class="main-image">
-    <p>We're coming back.</p>
+  <div class="countdown" id="countdown">Loading...</div>
+
+  <script>
+    function updateCountdown() {
+      // Target: Nov 1, 2025 00:00:00 AEDT (UTC+11)
+      const targetDate = new Date('2025-10-31T13:00:00Z'); // UTC time for AEDT midnight
+
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").textContent = "🎉 It's November 1st, 2025 (AEDT)! 🎉";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  </script>
     <img src="/logo.svg" alt="Transnet logo" class="logo">
   </div>
 </body>
