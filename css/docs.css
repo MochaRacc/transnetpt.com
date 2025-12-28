@@ -1,3 +1,5 @@
+@import url("/css/boing.css");
+
 @charset "UTF-8";
 html {
   font-size: 100%;
@@ -316,7 +318,7 @@ body {
   --nsw-text-link-hover-light: var(--nsw-hover-light);
   --nsw-text-visited: var(--nsw-visited);
   /* Font */
-  --nsw-font-family: "Plus Jakarta Sans", sans-serif;
+  --nsw-font-family: 'Boing', sans-serif;
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
   --nsw-font-normal: 400;
