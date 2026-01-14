@@ -244,10 +244,10 @@ body {
 }
 
 :root {
-  --nsw-brand-dark: #009245;
+  --nsw-brand-dark: #46009b;
   --nsw-brand-light: #8cc63f;
   --nsw-brand-supplementary: #39b54a;
-  --nsw-brand-accent: #009245;
+  --nsw-brand-accent: #46009b;
   --nsw-brand-accent-light: #ffe6ea;
   --nsw-black: #000000;
   --nsw-grey-01: #22272b;
@@ -272,7 +272,7 @@ body {
   --nsw-text-light: #ffffff;
   --nsw-text-dark-rgb: 34, 39, 43;
   --nsw-text-light-rgb: 255, 255, 255;
-  --nsw-link: #002664;
+  --nsw-link: #46009b;
   --nsw-link-light: rgb(229.5, 233.3, 239.5);
   --nsw-visited: rgb(84.7726824, 26.00794, 139.01706);
   --nsw-visited-light: rgb(220.95453648, 209.201588, 231.803412);
