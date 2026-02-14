@@ -1,4 +1,4 @@
-@import url("/css/armin-grotesk.css");
+@import url("/css/typefaces.css");
 
 @charset "UTF-8";
 html {
@@ -244,10 +244,10 @@ body {
 }
 
 :root {
-  --nsw-brand-dark: #46009b;
+  --nsw-brand-dark: #22b121;
   --nsw-brand-light: #8cc63f;
   --nsw-brand-supplementary: #39b54a;
-  --nsw-brand-accent: #46009b;
+  --nsw-brand-accent: #22b121;
   --nsw-brand-accent-light: #ffe6ea;
   --nsw-black: #000000;
   --nsw-grey-01: #22272b;
@@ -272,7 +272,7 @@ body {
   --nsw-text-light: #ffffff;
   --nsw-text-dark-rgb: 34, 39, 43;
   --nsw-text-light-rgb: 255, 255, 255;
-  --nsw-link: #46009b;
+  --nsw-link: #22b121;
   --nsw-link-light: rgb(229.5, 233.3, 239.5);
   --nsw-visited: rgb(84.7726824, 26.00794, 139.01706);
   --nsw-visited-light: rgb(220.95453648, 209.201588, 231.803412);
@@ -318,7 +318,7 @@ body {
   --nsw-text-link-hover-light: var(--nsw-hover-light);
   --nsw-text-visited: var(--nsw-visited);
   /* Font */
-  --nsw-font-family: 'Armin Grotesk', sans-serif;
+  --nsw-font-family: 'Gotham', sans-serif;
   letter-spacing: -0.25px;
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
@@ -4683,7 +4683,8 @@ body {
   display: inline-block;
   border: 0;
   color: var(--nsw-brand-dark);
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   border-radius: var(--nsw-border-radius);
 }
 .nsw-icon-button {
@@ -5057,7 +5058,8 @@ table td {
 table th,
 table thead td,
 table tfoot td {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 table thead {
   border-bottom: solid 2px var(--nsw-grey-01);
@@ -5105,7 +5107,8 @@ h6,
 .nsw-h4,
 .nsw-h5,
 .nsw-h6 {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   margin: 0;
 }
 
@@ -5217,7 +5220,8 @@ h6,
 }
 
 a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -5366,7 +5370,8 @@ a:active {
   }
 }
 .nsw-accordion__title, .nsw-accordion__button {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   padding: 1rem 3rem 1rem 1rem;
   margin-top: 0.5rem;
   background-color: var(--nsw-off-white);
@@ -5410,11 +5415,13 @@ a:active {
   color: var(--nsw-link);
   text-decoration: underline;
   text-decoration-skip-ink: auto;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   border: 0;
   padding: 0;
   background: none;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -5615,7 +5622,8 @@ a:active {
   border: 0;
   padding: 2px;
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -5698,7 +5706,8 @@ a:active {
 /* stylelint-disable sh-waqar/declaration-use-variable */
 .nsw-button {
   border-radius: 50rem;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   border: solid 2px transparent;
   white-space: normal;
   text-decoration: none;
@@ -6852,7 +6861,8 @@ a:active {
   border-color: transparent;
 }
 .nsw-card__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-card__title {
   font-size: var(--nsw-font-size-md-mobile);
@@ -6907,7 +6917,8 @@ a:active {
   }
 }
 .nsw-card__tag {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-card__tag + .nsw-card__date {
   margin-top: -0.5rem;
@@ -7370,7 +7381,8 @@ a:active {
   --nsw-icon-colour-accent: var(--nsw-brand-supplementary);
 }
 .nsw-content-block__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-content-block__title {
   font-size: var(--nsw-font-size-lg-mobile);
@@ -7460,7 +7472,8 @@ a:active {
   margin-right: auto;
 }
 .nsw-cookie-banner__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-cookie-banner__title {
   font-size: var(--nsw-font-size-md-mobile);
@@ -7646,7 +7659,8 @@ a:active {
   gap: 0.5rem;
 }
 .nsw-cookie-dialog__list-item label {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   cursor: pointer;
 }
 .nsw-cookie-dialog__list-item label {
@@ -8234,7 +8248,8 @@ a:active {
   }
 }
 .nsw-filters__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   padding: 1.5rem 0;
 }
 .nsw-filters__title {
@@ -8276,7 +8291,8 @@ a:active {
   }
 }
 .nsw-filters__controls button {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   background-color: var(--nsw-off-white);
   width: 100%;
   border: 0;
@@ -8536,7 +8552,8 @@ a:active {
 .nsw-filters__item-button {
   font-size: var(--nsw-font-size-sm-mobile);
   line-height: var(--nsw-line-height-sm-mobile);
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   display: flex;
   width: 100%;
   align-items: center;
@@ -8640,7 +8657,8 @@ a:active {
   border: 0;
   padding: 2px;
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -8777,7 +8795,8 @@ a:active {
   border: 0;
   padding: 2px;
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -8849,7 +8868,8 @@ a:active {
   border: 0;
   padding: 2px;
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -9185,7 +9205,8 @@ a:active {
 .nsw-form__helper--error, .nsw-form__helper--valid {
   margin-top: 0.5rem;
   padding: 0.5rem;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-text-dark);
   background-repeat: no-repeat;
   background-position: left 0.5rem top 0.5rem;
@@ -9210,7 +9231,8 @@ a:active {
   color: var(--nsw-status-success);
 }
 .nsw-form__label {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   display: block;
 }
 .nsw-form__label {
@@ -9407,7 +9429,8 @@ a:active {
   outline-offset: -3px;
 }
 .nsw-form__predictive-list a span {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-form__fieldset {
   margin: 0;
@@ -9422,7 +9445,8 @@ a:active {
   display: block;
 }
 .nsw-form__legend {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   width: 100%;
   display: block;
 }
@@ -9571,7 +9595,8 @@ a:active {
   position: relative;
 }
 .nsw-global-alert__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-global-alert__title {
   font-size: var(--nsw-font-size-md-mobile);
@@ -9674,7 +9699,8 @@ a:active {
 .nsw-header__menu button,
 .nsw-header__menu a, .nsw-header__search button,
 .nsw-header__search a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   border-radius: var(--nsw-border-radius);
   color: var(--nsw-aboriginal-palette-white);
   width: 3rem;
@@ -9873,7 +9899,8 @@ a:active {
   }
 }
 .nsw-header__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-brand-dark);
   display: flex;
   align-items: center;
@@ -10176,7 +10203,8 @@ a:active {
 }
 .nsw-hero-banner__sub-title {
   margin: 0 0 1rem 0;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-hero-banner__sub-title {
   font-size: var(--nsw-font-size-md-mobile);
@@ -10461,7 +10489,8 @@ a:active {
   }
 }
 .nsw-in-page-nav__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   margin: 0;
 }
 .nsw-in-page-nav__title {
@@ -10497,7 +10526,8 @@ a:active {
   background-color: transparent;
   border: 0;
   padding: 0;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -10539,7 +10569,8 @@ a:active {
 }
 .nsw-link--icon {
   display: inline-block;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   text-decoration: none;
 }
 .nsw-link--icon span {
@@ -10574,7 +10605,8 @@ a:active {
   }
 }
 .nsw-link-list__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   padding-bottom: 1rem;
 }
 .nsw-link-list__title {
@@ -10656,7 +10688,8 @@ a:active {
   border-top: 1px solid var(--nsw-grey-04);
 }
 .nsw-list-item__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-list-item__title {
   font-size: var(--nsw-font-size-md-mobile);
@@ -10688,7 +10721,8 @@ a:active {
   }
 }
 .nsw-list-item__label {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-list-item__image {
   min-width: 15.625rem;
@@ -10917,7 +10951,8 @@ a:active {
 }
 @media (min-width: 62rem) {
   .nsw-main-nav li a {
-    font-weight: var(--nsw-font-bold);
+      font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   }
 }
 .nsw-main-nav a {
@@ -10936,7 +10971,8 @@ a:active {
   outline-width: 3px;
 }
 .nsw-main-nav__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 @media (min-width: 62rem) {
   .nsw-main-nav__title {
@@ -10962,7 +10998,8 @@ a:active {
   }
 }
 .nsw-main-nav__title a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-main-nav__title a .nsw-material-icons {
   display: none;
@@ -11514,7 +11551,8 @@ a:active {
   background: 0;
   border: 0;
   padding: 0.25rem 0.25rem 0.25rem 0;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -11702,7 +11740,8 @@ a:active {
   padding-left: 3rem;
 }
 .nsw-side-nav li.active > a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
 }
 .nsw-side-nav a {
   font-weight: var(--nsw-font-normal);
@@ -11738,7 +11777,8 @@ a:active {
   border-color: var(--nsw-brand-light);
 }
 .nsw-side-nav__header a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   padding: 0.5rem 0;
 }
 .nsw-side-nav__header + ul > li:first-child {
@@ -11748,7 +11788,8 @@ a:active {
   display: none;
 }
 .nsw-side-nav__toggle {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   background-color: var(--nsw-off-white);
   width: 100%;
   border: 0;
@@ -11964,7 +12005,8 @@ a:active {
   justify-content: center;
   align-items: center;
   color: var(--nsw-brand-accent);
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   visibility: hidden;
 }
 .nsw-steps__item::after {
@@ -12637,7 +12679,8 @@ a:active {
 }
 .nsw-tooltip__element--light a,
 .nsw-toggletip__element--light a {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   color: var(--nsw-link);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
@@ -12769,7 +12812,8 @@ a:active {
   }
 }
 .nsw-utility-list__title {
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   padding-bottom: 1rem;
 }
 .nsw-utility-list__title {
@@ -12800,7 +12844,8 @@ a:active {
   align-items: center;
   text-decoration: none;
   cursor: pointer;
-  font-weight: var(--nsw-font-bold);
+    font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   border-bottom: 1px solid var(--nsw-grey-04);
   color: var(--nsw-brand-dark);
 }
@@ -13361,10 +13406,12 @@ a:active {
     font-weight: var(--nsw-font-normal);
   }
   .nsw-docs__nav .nsw-main-nav a.active {
-    font-weight: var(--nsw-font-bold);
+      font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
   }
   .nsw-docs__nav .nsw-main-nav a.current-section {
-    font-weight: var(--nsw-font-bold);
+      font-weight: var(--nsw-font-bold);
+  font-family: 'Gotham Rounded', sans-serif;
     border-left: 2px solid var(--nsw-brand-accent);
   }
   .nsw-docs__nav .nsw-main-nav a.current-section:hover {
