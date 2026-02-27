@@ -325,8 +325,8 @@ body {
   letter-spacing: -0.25px;
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
-  --nsw-font-normal: 400;
-  --nsw-font-bold: 600;
+  --nsw-font-normal: 500;
+  --nsw-font-bold: 800;
   --nsw-font-size-xxs-mobile: 0.75rem;
   --nsw-font-size-xxs-desktop: 0.75rem;
   --nsw-line-height-xxs-mobile: 1.5;
