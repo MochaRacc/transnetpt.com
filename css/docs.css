@@ -12155,6 +12155,10 @@ a:active {
   background-color: var(--nsw-brand-dark)
 }
 
+.nsw-hero-banner--ucsc {
+  background-color: var(--nsw-disruption-works)
+}
+
 .nsw-hero-banner--dark .nsw-hero-banner__content,
 .nsw-hero-banner--dark .nsw-hero-banner__links {
   color: var(--nsw-text-light)
