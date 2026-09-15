@@ -1,6 +1,11 @@
   
 @charset "UTF-8";
+<<<<<<< Updated upstream
 @import url('/css/armin-grotesk.css');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..900;1,200..900&display=swap');
+>>>>>>> Stashed changes
 
 html {
   box-sizing: border-box;
@@ -329,7 +334,11 @@ body {
   --nsw-disruption-travel: #3199ba;
   --nsw-disruption-cancelled: #a331ba;
 
+<<<<<<< Updated upstream
   --nsw-font-family: "Armin Grotesk", sans-serif;
+=======
+  --nsw-font-family: "Open Sans", sans-serif;
+>>>>>>> Stashed changes
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
   --nsw-font-normal: 500;
@@ -5591,6 +5600,10 @@ h3,
 h4,
 h5,
 h6 {
+<<<<<<< Updated upstream
+=======
+  font-family: "Nunito", Verdana, sans-serif;
+>>>>>>> Stashed changes
   font-weight: var(--nsw-font-bold);
   margin: 0
 }
@@ -7919,6 +7932,10 @@ a:active {
 }
 
 .nsw-card__title {
+<<<<<<< Updated upstream
+=======
+  font-family: "Nunito", Verdana, sans-serif;
+>>>>>>> Stashed changes
   font-size: var(--nsw-font-size-md-mobile);
   font-weight: var(--nsw-font-bold);
   line-height: var(--nsw-line-height-md-mobile)
@@ -12153,10 +12170,13 @@ a:active {
 
 .nsw-hero-banner--dark {
   background-color: var(--nsw-brand-dark)
+<<<<<<< Updated upstream
 }
 
 .nsw-hero-banner--ucsc {
   background-color: var(--nsw-disruption-works)
+=======
+>>>>>>> Stashed changes
 }
 
 .nsw-hero-banner--dark .nsw-hero-banner__content,
@@ -12809,6 +12829,10 @@ a:active {
 }
 
 .nsw-main-nav {
+<<<<<<< Updated upstream
+=======
+  font-family: "Nunito", Verdana, sans-serif;
+>>>>>>> Stashed changes
   background-color: var(--nsw-white);
   height: 100%;
   left: 0;
