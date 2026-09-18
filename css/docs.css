@@ -176,8 +176,8 @@ body {
   --nsw-font-family: "Armin Grotesk", sans-serif;
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
-  --nsw-font-normal: 500;
-  --nsw-font-bold: 800;
+  --nsw-font-normal: 400;
+  --nsw-font-bold: 700;
   --nsw-font-size-xxs-mobile: 0.75rem;
   --nsw-font-size-xxs-desktop: 0.75rem;
   --nsw-line-height-xxs-mobile: 1.5;
@@ -211,7 +211,7 @@ body {
   --nsw-border-color: var(--nsw-brand-accent);
   --nsw-border-radius: 0.25rem;
   --nsw-box-shadow: 0 0.25rem 0.75rem 0 rgba(var(--nsw-black-rgb), 0.15);
-  --nsw-container-width: 75rem;
+  --nsw-container-width: 100rem;
   --nsw-bg-opacity: 1;
   --nsw-section-bg: transparent
 }
@@ -11351,7 +11351,7 @@ a:active {
   background: none;
   border: 0;
   border-radius: var(--nsw-border-radius);
-  color: var(--nsw-brand-dark);
+  color: var(--nsw-white);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -12688,7 +12688,7 @@ a:active {
 
 @media (min-width:62rem) {
   .nsw-main-nav {
-    background-color: var(--nsw-off-white);
+    background-color: var(--nsw-brand-accent);
     height: auto;
     left: auto;
     overflow-y: visible;
@@ -12737,7 +12737,7 @@ a:active {
     margin-left: auto;
     margin-right: auto;
     max-width: var(--nsw-container-width);
-    padding-left: 0;
+    padding-left: 0px;
     padding-right: 0;
     position: relative
   }
@@ -12753,7 +12753,7 @@ a:active {
   }
 
   .nsw-main-nav__list>li>a.active {
-    background-color: var(--nsw-white);
+    background-color: var(--nsw-brand-accent);
     box-shadow: inset 0 -4px 0 var(--nsw-brand-dark)
   }
 
@@ -12781,7 +12781,7 @@ a:active {
 
 .nsw-main-nav li a {
   align-items: center;
-  color: var(--nsw-text-dark);
+  color: var(--nsw-text-light);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -12795,7 +12795,6 @@ a:active {
 }
 
 .nsw-main-nav li a .nsw-material-icons {
-  color: var(--nsw-brand-dark);
   margin-right: -.5rem
 }
 
@@ -12878,7 +12877,7 @@ a:active {
   .nsw-main-nav__description {
     display: block;
     font-size: var(--nsw-font-size-xs-desktop);
-    line-height: var(--nsw-line-height-xs-desktop)
+    line-height: var(--nsw-line-height-xs-desktop);
   }
 }
 
@@ -12955,11 +12954,11 @@ a:active {
   }
 
   .nsw-main-nav__sub-nav li a {
-    color: var(--nsw-brand-dark)
+    color: var(--nsw-text-dark);
   }
 
   .nsw-main-nav__sub-nav .nsw-main-nav__title a {
-    color: var(--nsw-brand-dark);
+    color: var(--nsw-brand-accent);
     padding: 0
   }
 
