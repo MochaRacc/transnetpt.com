@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define('NSW', ['exports'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.NSW = {}));
+  typeof define === 'function' && define.amd ? define('tn', ['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.tn = {}));
 })(this, (function (exports) { 'use strict';
 
   // Unique ID creation requires a high quality random # generator. In the browser we therefore
@@ -71,7 +71,7 @@
 
   // eslint-disable-next-line import/no-extraneous-dependencies
   const uniqueId = prefix => {
-    const prefixValue = prefix === undefined ? 'nsw' : prefix;
+    const prefixValue = prefix === undefined ? 'tn' : prefix;
     const uuid = v4();
     return `${prefixValue}-${uuid}`;
   };
@@ -131,9 +131,9 @@
     button.setAttribute('type', 'button');
     button.setAttribute('aria-expanded', 'false');
     button.setAttribute('aria-controls', uID);
-    button.classList.add('nsw-accordion__button');
+    button.classList.add('tn-accordion__button');
     button.insertAdjacentHTML('beforeend', `
-  <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">keyboard_arrow_down</span>
+  <span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">keyboard_arrow_down</span>
   `);
     fragment.appendChild(button);
     return fragment;
@@ -141,12 +141,12 @@
   class Accordion {
     constructor(element) {
       this.element = element;
-      const [expandAll, collapseAll] = Array.from(this.element.querySelectorAll('.nsw-accordion__toggle button'));
-      this.accordionHeadingClass = '.nsw-accordion__title';
+      const [expandAll, collapseAll] = Array.from(this.element.querySelectorAll('.tn-accordion__toggle button'));
+      this.accordionHeadingClass = '.tn-accordion__title';
       this.headings = this.element.querySelectorAll(this.accordionHeadingClass);
       this.expandAllBtn = expandAll;
       this.collapseAllBtn = collapseAll;
-      this.isExpandedOnLoad = this.element.querySelectorAll('.nsw-accordion__open');
+      this.isExpandedOnLoad = this.element.querySelectorAll('.tn-accordion__open');
       this.buttons = [];
       this.content = [];
       this.toggleEvent = event => this.toggle(event);
@@ -286,7 +286,7 @@
     }
     createButton() {
       const textSpan = this.constructor.createElement('span');
-      const iconSpan = this.constructor.createElement('span', ['material-icons', 'nsw-material-icons'], {
+      const iconSpan = this.constructor.createElement('span', ['material-icons', 'tn-material-icons'], {
         title: 'Back to top',
         focusable: 'false',
         'aria-hidden': 'true'
@@ -492,25 +492,25 @@
     constructor(element) {
       super(element);
       this.element = element;
-      this.containerClass = 'nsw-carousel-container';
+      this.containerClass = 'tn-carousel-container';
       this.controlClass = 'js-carousel__control';
       this.wrapperClass = 'js-carousel__wrapper';
       this.counterClass = 'js-carousel__counter';
       this.counterTorClass = 'js-carousel__counter-tot';
       this.navClass = 'js-carousel__navigation';
       this.navItemClass = 'js-carousel__nav-item';
-      this.navigationItemClass = this.element.getAttribute('data-navigation-item-class') ? this.element.getAttribute('data-navigation-item-class') : 'nsw-carousel__nav-item';
-      this.navigationClass = this.element.getAttribute('data-navigation-class') ? this.element.getAttribute('data-navigation-class') : 'nsw-carousel__navigation';
-      this.paginationClass = this.element.getAttribute('data-pagination-class') ? this.element.getAttribute('data-pagination-class') : 'nsw-carousel__navigation--pagination';
-      this.draggingClass = 'nsw-carousel--is-dragging';
-      this.loadedClass = 'nsw-carousel--loaded';
-      this.animateClass = 'nsw-carousel__list--animating';
+      this.navigationItemClass = this.element.getAttribute('data-navigation-item-class') ? this.element.getAttribute('data-navigation-item-class') : 'tn-carousel__nav-item';
+      this.navigationClass = this.element.getAttribute('data-navigation-class') ? this.element.getAttribute('data-navigation-class') : 'tn-carousel__navigation';
+      this.paginationClass = this.element.getAttribute('data-pagination-class') ? this.element.getAttribute('data-pagination-class') : 'tn-carousel__navigation--pagination';
+      this.draggingClass = 'tn-carousel--is-dragging';
+      this.loadedClass = 'tn-carousel--loaded';
+      this.animateClass = 'tn-carousel__list--animating';
       this.cloneClass = 'js-clone';
       this.srClass = 'sr-only';
       this.srLiveAreaClass = 'js-carousel__aria-live';
-      this.hideControlsClass = 'nsw-carousel--hide-controls';
-      this.hideClass = 'nsw-display-none';
-      this.centerClass = 'nsw-justify-content-center';
+      this.hideControlsClass = 'tn-carousel--hide-controls';
+      this.hideClass = 'tn-display-none';
+      this.centerClass = 'tn-justify-content-center';
       this.listWrapper = this.element.querySelector(`.${this.wrapperClass}`);
       this.list = this.listWrapper ? this.listWrapper.querySelector('ol') : false;
       this.items = this.list ? this.list.getElementsByTagName('li') : false;
@@ -683,12 +683,12 @@
           event.target.click();
         }
       });
-      const itemLinks = this.element.querySelectorAll('.nsw-carousel__item a');
+      const itemLinks = this.element.querySelectorAll('.tn-carousel__item a');
       if (itemLinks.length > 0) {
         itemLinks.forEach((link, index) => {
           link.addEventListener('focus', () => {
             const slider = link.closest('.js-carousel__wrapper');
-            const carousel = slider.querySelector('.nsw-carousel__list');
+            const carousel = slider.querySelector('.tn-carousel__list');
             if (carousel) {
               link.focus({
                 preventScroll: true
@@ -696,7 +696,7 @@
             }
           });
           link.addEventListener('focusout', () => {
-            const item = link.closest('.nsw-carousel__item');
+            const item = link.closest('.tn-carousel__item');
             const dataIndex = Number(item.getAttribute('data-index')) + 1;
             if (dataIndex % this.visibItemsNb === 0 && dataIndex !== this.items.length) {
               itemLinks[index + 1].focus({
@@ -1098,8 +1098,8 @@
   class CookieConsent {
     constructor(config = null) {
       this.isInit = false;
-      if (!window.NSW || !window.NSW.CookieConsent) {
-        console.error('NSW CookieConsent is not available.');
+      if (!window.tn || !window.tn.CookieConsent) {
+        console.error('tn CookieConsent is not available.');
         return;
       }
       if (!config) {
@@ -1170,11 +1170,11 @@
         preferencesModal
       } = en;
       const cookiesListHtml = `
-    <ul class="nsw-cookie-dialog__list">
+    <ul class="tn-cookie-dialog__list">
     ${preferencesModal.sections.map((section, index) => `
-          <li class="nsw-cookie-dialog__list-item">
+          <li class="tn-cookie-dialog__list-item">
             <input 
-              class="nsw-form__checkbox-input" 
+              class="tn-form__checkbox-input" 
               value="${section.linkedCategory}" 
               type="checkbox" 
               name="form-checkbox-multi-${index + 1}" 
@@ -1182,12 +1182,12 @@
               ${categories[section.linkedCategory].readOnly ? 'disabled' : ''}
             >
             <label 
-              class="nsw-form__checkbox-label" 
+              class="tn-form__checkbox-label" 
               for="cookie-settings-${index + 1}"
             >
               ${section.title}
             </label>
-            <div class="nsw-cookie-dialog__cookie-details">
+            <div class="tn-cookie-dialog__cookie-details">
               <p>${section.description}</p>
             </div>
           </li>
@@ -1197,42 +1197,42 @@
 
       // Create the dialog dynamically
       const preferencesDialogHtml = `
-      <div class="nsw-cookie-dialog nsw-dialog nsw-dialog--single-action js-dialog js-dialog-dismiss" id="cookie-consent-preferences" role="dialog" aria-labelledby="cookie-consent-dialog">
-        <div class="nsw-dialog__wrapper">
-          <div class="nsw-dialog__container">
-            <div class="nsw-dialog__top">
-              <div class="nsw-dialog__title">
+      <div class="tn-cookie-dialog tn-dialog tn-dialog--single-action js-dialog js-dialog-dismiss" id="cookie-consent-preferences" role="dialog" aria-labelledby="cookie-consent-dialog">
+        <div class="tn-dialog__wrapper">
+          <div class="tn-dialog__container">
+            <div class="tn-dialog__top">
+              <div class="tn-dialog__title">
                 <h2 id="cookie-dialog-title">${preferencesModal.title ? preferencesModal.title : 'Cookie preferences'}</h2>
               </div>
-              <div class="nsw-dialog__close">
-                <button class="nsw-icon-button js-close-dialog">
-                  <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">close</span>
+              <div class="tn-dialog__close">
+                <button class="tn-icon-button js-close-dialog">
+                  <span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">close</span>
                   <span class="sr-only">${preferencesModal.closeIconLabel ? preferencesModal.closeIconLabel : 'Close dialog'}</span>
                 </button>
               </div>
             </div>
-            <div class="nsw-dialog__content">
-              <div class="nsw-tabs js-cookie-consent-tabs">
-                <ul class="nsw-tabs__list">
+            <div class="tn-dialog__content">
+              <div class="tn-tabs js-cookie-consent-tabs">
+                <ul class="tn-tabs__list">
                   <li><a href="#cookie-settings" class="js-tabs-fixed">${preferencesModal.tab1 ? preferencesModal.tab1.tabTitle : 'Cookie preferences'}</a></li>
                   ${preferencesModal.tab2 ? `<li><a href="#cookie-use" class="js-tabs-fixed">${preferencesModal.tab2.tabTitle ? preferencesModal.tab2.tabTitle : 'How we use cookies'}</a></li>` : ''}
                   <li><a href="#cookie-information" class="js-tabs-fixed">What are cookies?</a></li>
                 </ul>
-                <section id="cookie-settings" class="nsw-tabs__content nsw-tabs__content--side-flush">
-                  <div class="nsw-cookie-dialog__content-wrapper">
+                <section id="cookie-settings" class="tn-tabs__content tn-tabs__content--side-flush">
+                  <div class="tn-cookie-dialog__content-wrapper">
                     ${preferencesModal.tab1.content ? preferencesModal.tab1.content : ''}
                     ${cookiesListHtml}
                   </div>
                 </section>
                 ${preferencesModal.tab2 ? `
-                    <section id="cookie-use" class="nsw-tabs__content nsw-tabs__content--side-flush">
-                      <div class="nsw-cookie-dialog__content-wrapper">
+                    <section id="cookie-use" class="tn-tabs__content tn-tabs__content--side-flush">
+                      <div class="tn-cookie-dialog__content-wrapper">
                         ${preferencesModal.tab2.content}
                       </div>
                     </section>
                   ` : ''}
-                <section id="cookie-information" class="nsw-tabs__content nsw-tabs__content--side-flush">
-                  <div class="nsw-cookie-dialog__content-wrapper">
+                <section id="cookie-information" class="tn-tabs__content tn-tabs__content--side-flush">
+                  <div class="tn-cookie-dialog__content-wrapper">
                     <p>Cookies are small files stored on your phone, tablet, or computer when you visit a website. They help us understand how you use our website and improve your experience.</p>
                     
                     <p>Some cookies collect information about how you interact with our website, such as the pages you visit and links you click. Others may store personal information, depending on their purpose and configuration.</p>
@@ -1268,19 +1268,19 @@
 
                     <p>For more information on cookies, including how to manage or delete them, visit <a href="https://www.allaboutcookies.org">www.allaboutcookies.org</a>.</p>
 
-                    <p>For privacy advice, please contact your agency’s privacy or information governance team. Additional guidance is available at <a href="mailto:digitalnswprivacy@customerservice.nsw.gov.au">digitalnswprivacy@customerservice.nsw.gov.au</a>.</p>
+                    <p>For privacy advice, please contact your agency’s privacy or information governance team. Additional guidance is available at <a href="mailto:digitaltnprivacy@customerservice.tn.gov.au">digitaltnprivacy@customerservice.tn.gov.au</a>.</p>
                   </div>
                 </section>
               </div>
             </div>
           </div>
-          <div class="nsw-cookie-dialog__bottom">
-            <div class="nsw-cookie-dialog__cta-group">
-              ${preferencesModal.acceptAllBtn ? `<button class="nsw-button nsw-button--dark-outline-solid js-close-dialog" data-role="accept-all">${preferencesModal.acceptAllBtn ? preferencesModal.acceptAllBtn : 'Accept all cookies'}</button>` : ''}
-              ${preferencesModal.acceptNecessaryBtn ? `<button class="nsw-button nsw-button--dark-outline-solid js-close-dialog" data-role="reject-all">${preferencesModal.acceptNecessaryBtn ? preferencesModal.acceptNecessaryBtn : 'Reject all cookies'}</button>` : ''}
+          <div class="tn-cookie-dialog__bottom">
+            <div class="tn-cookie-dialog__cta-group">
+              ${preferencesModal.acceptAllBtn ? `<button class="tn-button tn-button--dark-outline-solid js-close-dialog" data-role="accept-all">${preferencesModal.acceptAllBtn ? preferencesModal.acceptAllBtn : 'Accept all cookies'}</button>` : ''}
+              ${preferencesModal.acceptNecessaryBtn ? `<button class="tn-button tn-button--dark-outline-solid js-close-dialog" data-role="reject-all">${preferencesModal.acceptNecessaryBtn ? preferencesModal.acceptNecessaryBtn : 'Reject all cookies'}</button>` : ''}
             </div>
-            <div class="nsw-cookie-dialog__cta-group">
-              <button class="nsw-button nsw-button--dark js-close-dialog" data-role="accept-selection">${preferencesModal.savePreferencesBtn ? preferencesModal.savePreferencesBtn : 'Accept current selection'}</button>
+            <div class="tn-cookie-dialog__cta-group">
+              <button class="tn-button tn-button--dark js-close-dialog" data-role="accept-selection">${preferencesModal.savePreferencesBtn ? preferencesModal.savePreferencesBtn : 'Accept current selection'}</button>
             </div>
           </div>
         </div>
@@ -1300,19 +1300,19 @@
         // Append the dialog directly to the body
         document.body.appendChild(this.preferencesDialogElement);
 
-        // Initialise the NSW Design System Dialog
-        this.dialogInstance = new window.NSW.Dialog(this.preferencesDialogElement);
+        // Initialise the tn Design System Dialog
+        this.dialogInstance = new window.tn.Dialog(this.preferencesDialogElement);
         this.dialogInstance.init();
       } else {
         console.warn('Dialog trigger element not found');
       }
 
       // Initialise tabs
-      if (window.NSW && window.NSW.Tabs) {
+      if (window.tn && window.tn.Tabs) {
         const tabs = document.querySelector('.js-cookie-consent-tabs');
-        new window.NSW.Tabs(tabs).init();
+        new window.tn.Tabs(tabs).init();
       } else {
-        console.warn('NSW Tabs library not found');
+        console.warn('tn Tabs library not found');
       }
     }
     createConsentBanner() {
@@ -1329,27 +1329,27 @@
       const bannerOffset = consentModal.bannerOffset ? consentModal.bannerOffset : '0';
       this.consentBannerConfirmationMessage = consentModal.confirmationMessage || '';
       const consentBannerHtml = `
-      <div class="nsw-cookie-banner" role="alert" tabindex="-1" aria-labelledby="cookie-banner-title" aria-live="assertive" style="bottom: ${bannerOffset};">
-        <div class="nsw-cookie-banner__wrapper">
-          <div id="cookie-banner-title" class="nsw-cookie-banner__title">${consentModal.title || 'Cookie use on our website'}</div>
-          <span class="nsw-cookie-banner__description">
-            <div class="nsw-cookie-banner__content">
+      <div class="tn-cookie-banner" role="alert" tabindex="-1" aria-labelledby="cookie-banner-title" aria-live="assertive" style="bottom: ${bannerOffset};">
+        <div class="tn-cookie-banner__wrapper">
+          <div id="cookie-banner-title" class="tn-cookie-banner__title">${consentModal.title || 'Cookie use on our website'}</div>
+          <span class="tn-cookie-banner__description">
+            <div class="tn-cookie-banner__content">
               ${consentModal.description ? `<p>${consentModal.description}</p>` : ''}
             </div>
-            <div class="nsw-cookie-banner__buttons-container">
-              ${consentModal.acceptAllBtn || consentModal.acceptNecessaryBtn ? '<div class="nsw-cookie-banner__cta-group">' : ''}
-                ${consentModal.acceptAllBtn ? `<button class="nsw-button nsw-button--dark js-close-dialog ${!consentModal.confirmationMessage ? 'js-dismiss-cookie-banner' : ''}" data-role="accept-all">${consentModal.acceptAllBtn}</button>` : ''}
-                ${consentModal.acceptNecessaryBtn ? `<button class="nsw-button nsw-button--dark ${!consentModal.confirmationMessage ? 'js-dismiss-cookie-banner' : ''}" data-role="reject-all">${consentModal.acceptNecessaryBtn}</button>` : ''}
+            <div class="tn-cookie-banner__buttons-container">
+              ${consentModal.acceptAllBtn || consentModal.acceptNecessaryBtn ? '<div class="tn-cookie-banner__cta-group">' : ''}
+                ${consentModal.acceptAllBtn ? `<button class="tn-button tn-button--dark js-close-dialog ${!consentModal.confirmationMessage ? 'js-dismiss-cookie-banner' : ''}" data-role="accept-all">${consentModal.acceptAllBtn}</button>` : ''}
+                ${consentModal.acceptNecessaryBtn ? `<button class="tn-button tn-button--dark ${!consentModal.confirmationMessage ? 'js-dismiss-cookie-banner' : ''}" data-role="reject-all">${consentModal.acceptNecessaryBtn}</button>` : ''}
               ${consentModal.acceptAllBtn || consentModal.acceptNecessaryBtn ? '</div>' : ''}
-              <a href="#cookie-consent" class="nsw-button nsw-button--dark-outline js-open-dialog-cookie-consent-preferences" aria-haspopup="dialog">${consentModal.showPreferencesBtn || 'Manage your cookies'}</a>
+              <a href="#cookie-consent" class="tn-button tn-button--dark-outline js-open-dialog-cookie-consent-preferences" aria-haspopup="dialog">${consentModal.showPreferencesBtn || 'Manage your cookies'}</a>
             </div>
           </span>
-          <span class="nsw-cookie-banner__confirmation-message" hidden="true">
-            <div class="nsw-cookie-banner__content">
+          <span class="tn-cookie-banner__confirmation-message" hidden="true">
+            <div class="tn-cookie-banner__content">
               <p>${consentModal.confirmationMessage}</p>
             </div>
-            <div class="nsw-cookie-banner__buttons-container">
-              <button class="nsw-button nsw-button--dark js-dismiss-cookie-banner">Close this message</button>
+            <div class="tn-cookie-banner__buttons-container">
+              <button class="tn-button tn-button--dark js-dismiss-cookie-banner">Close this message</button>
             </div>
           </span>
         </div>
@@ -1379,7 +1379,7 @@
       }
     }
     initElements() {
-      this.cookieInputContainer = document.querySelector('.nsw-cookie-dialog__list');
+      this.cookieInputContainer = document.querySelector('.tn-cookie-dialog__list');
       this.allCookieInputs = this.cookieInputContainer ? this.cookieInputContainer.querySelectorAll('input[type="checkbox"]') : [];
       this.acceptSelectionButton = document.querySelector('[data-role="accept-selection"]');
       this.acceptAllButton = document.querySelector('[data-role="accept-all"]');
@@ -1502,10 +1502,10 @@
     }
     showConfirmationMessage() {
       // Select the confirmation message element
-      const confirmationMessage = this.consentBannerElement.querySelector('.nsw-cookie-banner__confirmation-message');
+      const confirmationMessage = this.consentBannerElement.querySelector('.tn-cookie-banner__confirmation-message');
 
       // Select the description element
-      const description = this.consentBannerElement.querySelector('.nsw-cookie-banner__description');
+      const description = this.consentBannerElement.querySelector('.tn-cookie-banner__description');
       if (confirmationMessage) {
         // Change the hidden attribute to false for the confirmation message
         confirmationMessage.removeAttribute('hidden');
@@ -1517,8 +1517,8 @@
     }
     showConsentBanner() {
       if (this.consentBannerElement) {
-        const description = this.consentBannerElement.querySelector('.nsw-cookie-banner__description');
-        const confirmationMessage = this.consentBannerElement.querySelector('.nsw-cookie-banner__confirmation-message');
+        const description = this.consentBannerElement.querySelector('.tn-cookie-banner__description');
+        const confirmationMessage = this.consentBannerElement.querySelector('.tn-cookie-banner__confirmation-message');
         if (this.consentBannerConfirmationMessage && confirmationMessage) {
           // Hide the confirmation message if it's present
           confirmationMessage.setAttribute('hidden', 'true');
@@ -1543,7 +1543,7 @@
   class Breadcrumbs {
     constructor(element) {
       this.element = element;
-      this.allBreadcrumbs = this.element.querySelector('.nsw-breadcrumbs ol');
+      this.allBreadcrumbs = this.element.querySelector('.tn-breadcrumbs ol');
       this.secondBreadcrumb = this.element.querySelector('.js-breadcrumbs li:nth-child(2)');
       this.condition = false;
     }
@@ -1553,10 +1553,10 @@
       }
     }
     createToggle() {
-      const toggle = this.constructor.createElement('li', ['nsw-breadcrumbs__show-more-toggle']);
-      toggle.innerHTML = '<button aria-label="Show more breadcrumbs" class="nsw-breadcrumbs__toggle-button" type="button">…</button>';
+      const toggle = this.constructor.createElement('li', ['tn-breadcrumbs__show-more-toggle']);
+      toggle.innerHTML = '<button aria-label="Show more breadcrumbs" class="tn-breadcrumbs__toggle-button" type="button">…</button>';
       toggle.addEventListener('click', () => {
-        this.allBreadcrumbs.classList.toggle('nsw-breadcrumbs__show-all');
+        this.allBreadcrumbs.classList.toggle('tn-breadcrumbs__show-all');
       });
       this.allBreadcrumbs.insertBefore(toggle, this.secondBreadcrumb);
     }
@@ -1576,7 +1576,7 @@
   class DatePicker {
     constructor(element) {
       this.element = element;
-      this.prefix = 'nsw-';
+      this.prefix = 'tn-';
       this.class = 'date-picker';
       this.uID = uniqueId('calendar-label');
       this.dateClass = `${this.prefix}${this.class}__date`;
@@ -1628,52 +1628,52 @@
     }
     initCreateCalendar() {
       const calendar = `
-    <div class="nsw-date-picker js-date-picker" role="dialog" aria-labelledby="${this.uID}">
-      <header class="nsw-date-picker__header">
-        <div class="nsw-date-picker__title">
-          <span class="nsw-date-picker__title-label js-date-picker__title-label" id="${this.uID}"></span>
+    <div class="tn-date-picker js-date-picker" role="dialog" aria-labelledby="${this.uID}">
+      <header class="tn-date-picker__header">
+        <div class="tn-date-picker__title">
+          <span class="tn-date-picker__title-label js-date-picker__title-label" id="${this.uID}"></span>
 
           <nav>
-            <ul class="nsw-date-picker__title-nav js-date-picker__title-nav">
+            <ul class="tn-date-picker__title-nav js-date-picker__title-nav">
               <li>
-                <button class="nsw-icon-button nsw-date-picker__title-nav-btn js-date-picker__year-nav-btn js-date-picker__year-nav-btn--prev" type="button">
-                  <span class="material-icons nsw-material-icons">keyboard_double_arrow_left</span>
+                <button class="tn-icon-button tn-date-picker__title-nav-btn js-date-picker__year-nav-btn js-date-picker__year-nav-btn--prev" type="button">
+                  <span class="material-icons tn-material-icons">keyboard_double_arrow_left</span>
                 </button>
-                <button class="nsw-icon-button nsw-date-picker__title-nav-btn js-date-picker__month-nav-btn js-date-picker__month-nav-btn--prev" type="button">
-                  <span class="material-icons nsw-material-icons">chevron_left</span>
+                <button class="tn-icon-button tn-date-picker__title-nav-btn js-date-picker__month-nav-btn js-date-picker__month-nav-btn--prev" type="button">
+                  <span class="material-icons tn-material-icons">chevron_left</span>
                 </button>
               </li>
 
               <li>
-                <button class="nsw-icon-button nsw-date-picker__title-nav-btn js-date-picker__month-nav-btn js-date-picker__month-nav-btn--next" type="button">
-                  <span class="material-icons nsw-material-icons">chevron_right</span>
+                <button class="tn-icon-button tn-date-picker__title-nav-btn js-date-picker__month-nav-btn js-date-picker__month-nav-btn--next" type="button">
+                  <span class="material-icons tn-material-icons">chevron_right</span>
                 </button>
-                <button class="nsw-icon-button nsw-date-picker__title-nav-btn js-date-picker__year-nav-btn js-date-picker__year-nav-btn--next" type="button">
-                  <span class="material-icons nsw-material-icons">keyboard_double_arrow_right</span>
+                <button class="tn-icon-button tn-date-picker__title-nav-btn js-date-picker__year-nav-btn js-date-picker__year-nav-btn--next" type="button">
+                  <span class="material-icons tn-material-icons">keyboard_double_arrow_right</span>
                 </button>
               </li>
             </ul>
           </nav>
         </div>
 
-        <ol class="nsw-date-picker__week">
-          <li><div class="nsw-date-picker__day">Mo<span class="sr-only">nday</span></div></li>
-          <li><div class="nsw-date-picker__day">Tu<span class="sr-only">esday</span></div></li>
-          <li><div class="nsw-date-picker__day">We<span class="sr-only">dnesday</span></div></li>
-          <li><div class="nsw-date-picker__day">Th<span class="sr-only">ursday</span></div></li>
-          <li><div class="nsw-date-picker__day">Fr<span class="sr-only">iday</span></div></li>
-          <li><div class="nsw-date-picker__day">Sa<span class="sr-only">turday</span></div></li>
-          <li><div class="nsw-date-picker__day">Su<span class="sr-only">nday</span></div></li>
+        <ol class="tn-date-picker__week">
+          <li><div class="tn-date-picker__day">Mo<span class="sr-only">nday</span></div></li>
+          <li><div class="tn-date-picker__day">Tu<span class="sr-only">esday</span></div></li>
+          <li><div class="tn-date-picker__day">We<span class="sr-only">dnesday</span></div></li>
+          <li><div class="tn-date-picker__day">Th<span class="sr-only">ursday</span></div></li>
+          <li><div class="tn-date-picker__day">Fr<span class="sr-only">iday</span></div></li>
+          <li><div class="tn-date-picker__day">Sa<span class="sr-only">turday</span></div></li>
+          <li><div class="tn-date-picker__day">Su<span class="sr-only">nday</span></div></li>
         </ol>
       </header>
 
-      <ol class="nsw-date-picker__dates js-date-picker__dates" aria-labelledby="${this.uID}">
+      <ol class="tn-date-picker__dates js-date-picker__dates" aria-labelledby="${this.uID}">
         
       </ol>
 
-      <div class="nsw-date-picker__buttongroup">
-        <button type="button" class="nsw-button nsw-button--dark-outline-solid js-date-picker__close" value="cancel">Cancel</button>
-        <button type="button" class="nsw-button nsw-button--dark js-date-picker__accept" value="ok">OK</button>
+      <div class="tn-date-picker__buttongroup">
+        <button type="button" class="tn-button tn-button--dark-outline-solid js-date-picker__close" value="cancel">Cancel</button>
+        <button type="button" class="tn-button tn-button--dark js-date-picker__accept" value="ok">OK</button>
       </div>
     </div>`;
       this.element.insertAdjacentHTML('beforeend', calendar);
@@ -2137,7 +2137,7 @@
   class Dialog {
     constructor(element) {
       this.element = element;
-      this.elementWrapper = this.element.querySelector('.nsw-dialog__wrapper');
+      this.elementWrapper = this.element.querySelector('.tn-dialog__wrapper');
       this.openBtn = document.querySelectorAll(`.js-open-dialog-${this.element.getAttribute('id')}`);
       this.closeBtn = this.element.querySelectorAll('.js-close-dialog');
       this.focusableEls = this.element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
@@ -2195,13 +2195,13 @@
     constructor(element) {
       this.element = element;
       this.uID = uniqueId('external');
-      this.linkIcon = this.element.querySelector('.nsw-material-icons');
+      this.linkIcon = this.element.querySelector('.tn-material-icons');
       this.linkIconTitle = this.linkIcon ? this.linkIcon.getAttribute('title') : false;
       this.linkElement = false;
     }
     init() {
       if (this.element.tagName !== 'A') return;
-      this.element.classList.add('nsw-link', 'nsw-link--icon');
+      this.element.classList.add('tn-link', 'tn-link--icon');
       this.constructor.setAttributes(this.element, {
         target: '_blank',
         rel: 'noopener'
@@ -2235,8 +2235,8 @@
   class FileUpload {
     constructor(element) {
       this.element = element;
-      this.input = this.element.querySelector('input.nsw-file-upload__input');
-      this.label = this.element.querySelector('label.nsw-file-upload__label');
+      this.input = this.element.querySelector('input.tn-file-upload__input');
+      this.label = this.element.querySelector('label.tn-file-upload__label');
       this.multipleUpload = this.input && this.input.hasAttribute('multiple');
       this.replaceFiles = this.element.hasAttribute('data-replace-files');
       this.filesList = null;
@@ -2246,10 +2246,10 @@
       if (!this.label) {
         const label = document.createElement('label');
         label.htmlFor = this.input.id;
-        label.classList.add('nsw-file-upload__label', 'nsw-button', 'nsw-button--dark-outline-solid');
+        label.classList.add('tn-file-upload__label', 'tn-button', 'tn-button--dark-outline-solid');
         label.textContent = 'Select file';
         this.element.insertAdjacentElement('beforeend', label);
-        this.label = this.element.querySelector('label.nsw-file-upload__label');
+        this.label = this.element.querySelector('label.tn-file-upload__label');
       }
       this.input.addEventListener('change', this.handleInputChange.bind(this));
       this.element.addEventListener('click', this.handleFileRemove.bind(this));
@@ -2259,22 +2259,22 @@
     }
     createFileList() {
       const ul = document.createElement('ul');
-      ul.classList.add('nsw-file-upload__list');
+      ul.classList.add('tn-file-upload__list');
       this.label.insertAdjacentElement('afterend', ul);
-      this.filesList = this.element.querySelector('.nsw-file-upload__list');
+      this.filesList = this.element.querySelector('.tn-file-upload__list');
     }
     createFileItem(file) {
       const li = document.createElement('li');
-      li.classList.add('nsw-file-upload__item');
+      li.classList.add('tn-file-upload__item');
       const html = `
-      <span class="nsw-file-upload__item-filename"></span>
-      <button type="button" class="nsw-icon-button">
+      <span class="tn-file-upload__item-filename"></span>
+      <button type="button" class="tn-icon-button">
         <span class="sr-only">Remove file</span>
-        <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">cancel</span>
+        <span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">cancel</span>
       </button>`;
       li.insertAdjacentHTML('afterbegin', html);
-      li.querySelector('.nsw-file-upload__item-filename').textContent = this.constructor.truncateString(file.name, 50);
-      li.querySelector('.nsw-file-upload__item-filename').dataset.filename = file.name;
+      li.querySelector('.tn-file-upload__item-filename').textContent = this.constructor.truncateString(file.name, 50);
+      li.querySelector('.tn-file-upload__item-filename').dataset.filename = file.name;
       return li.outerHTML;
     }
     updateFileList() {
@@ -2327,12 +2327,12 @@
       this.input.files = this.currentFiles.files;
     }
     handleFileRemove(event) {
-      if (!event.target.closest('.nsw-icon-button')) return;
+      if (!event.target.closest('.tn-icon-button')) return;
       event.preventDefault();
-      const item = event.target.closest('.nsw-file-upload__item');
+      const item = event.target.closest('.tn-file-upload__item');
       const {
         filename
-      } = item.querySelector('.nsw-file-upload__item-filename').dataset;
+      } = item.querySelector('.tn-file-upload__item-filename').dataset;
       const dataTransfer = new DataTransfer();
       for (let i = 0; i < this.currentFiles.files.length; i += 1) {
         const file = this.currentFiles.files[i];
@@ -2357,10 +2357,10 @@
     constructor(element) {
       this.element = element;
       // Classes
-      this.hideClass = 'nsw-display-none';
+      this.hideClass = 'tn-display-none';
       this.showClass = 'active';
       this.openClass = 'filters-open';
-      this.prefix = 'nsw-';
+      this.prefix = 'tn-';
       this.class = 'filters';
       this.controlsClass = `${this.class}__controls`;
       this.wrapperClass = `${this.class}__wrapper`;
@@ -2377,7 +2377,7 @@
       this.controls = this.element.querySelector(`.${this.prefix}${this.controlsClass}`);
       this.controlsButton = this.controls && this.controls.querySelector('button');
       this.controlsButtonIcons = this.controlsButton && this.controlsButton.querySelectorAll('span');
-      this.controlsButtonText = this.controlsButton && this.controlsButton.querySelector('span:not(.nsw-material-icons)');
+      this.controlsButtonText = this.controlsButton && this.controlsButton.querySelector('span:not(.tn-material-icons)');
       this.controlsButtonTextContent = this.controlsButton && this.controlsButtonText.innerText;
       this.wrapper = this.element.querySelector(`.${this.prefix}${this.wrapperClass}`);
       this.closeButton = this.wrapper && this.wrapper.querySelector(`.${this.prefix}${this.closeClass} button`);
@@ -2516,7 +2516,7 @@
     }
     showFilters(event) {
       event.preventDefault();
-      if (this.element.classList.contains('nsw-filters--down')) {
+      if (this.element.classList.contains('tn-filters--down')) {
         this.element.classList.toggle(this.showClass);
       } else {
         this.trapFocus(this.wrapper);
@@ -2573,8 +2573,8 @@
         this.items.forEach(element => {
           const content = element.querySelector(`.${this.prefix}${this.itemClass}-content`);
           const textInputs = content.querySelectorAll('input[type="text"]');
-          const singleSelects = content.querySelectorAll('select:not([multiple]):not(.nsw-display-none)');
-          const multiSelects = content.querySelectorAll('select[multiple]:not(.nsw-display-none)');
+          const singleSelects = content.querySelectorAll('select:not([multiple]):not(.tn-display-none)');
+          const multiSelects = content.querySelectorAll('select[multiple]:not(.tn-display-none)');
           const checkboxes = content.querySelectorAll('input[type="checkbox"]');
           this.options.push(...textInputs, ...singleSelects, ...checkboxes, ...multiSelects);
         });
@@ -2593,8 +2593,8 @@
     }
     selectedCount(array) {
       if (!this.count) return;
-      const dateInputs = array.filter(option => option.closest('.nsw-form__date'));
-      const removedDateInputs = array.filter(option => !option.closest('.nsw-form__date'));
+      const dateInputs = array.filter(option => option.closest('.tn-form__date'));
+      const removedDateInputs = array.filter(option => !option.closest('.tn-form__date'));
       let buttonText = `${this.controlsButtonTextContent}`;
       let countText = '';
       if (dateInputs.length > 0) {
@@ -2610,8 +2610,8 @@
       }
     }
     setSelectedState() {
-      const formElements = 'textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]):not(.nsw-display-none)';
-      const checkIcon = '<span class="material-icons nsw-material-icons nsw-material-icons--valid" focusable="false" aria-hidden="true">check_circle</span>';
+      const formElements = 'textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]):not(.tn-display-none)';
+      const checkIcon = '<span class="material-icons tn-material-icons tn-material-icons--valid" focusable="false" aria-hidden="true">check_circle</span>';
       this.buttons.forEach(element => {
         const buttonName = element.querySelector(`.${this.prefix}${this.itemClass}-name`);
         const label = element.getAttribute('data-label');
@@ -2774,7 +2774,7 @@
     }
     handleOutsideClick(event) {
       // removes handleOutsideClick functionality from docs site
-      if (this.nav.closest('.nsw-docs')) return;
+      if (this.nav.closest('.tn-docs')) return;
       if (!this.mainNavIsOpen) return;
       const isOutsideNav = !this.nav.contains(event.target);
       if (isOutsideNav) {
@@ -2862,7 +2862,7 @@
     }
     buttonClickDesktop(event) {
       const isDesktop = this.breakpoint.matches;
-      if (!isDesktop || !event.target.closest('.nsw-main-nav__sub-nav')) {
+      if (!isDesktop || !event.target.closest('.tn-main-nav__sub-nav')) {
         this.saveElements(event);
         this.toggleSubNavDesktop();
         event.preventDefault();
@@ -2878,7 +2878,7 @@
     escapeClose(e) {
       if (e.key === 'Escape') {
         // removes handleOutsideClick functionality from docs site
-        if (this.nav.closest('.nsw-docs')) return;
+        if (this.nav.closest('.tn-docs')) return;
         const {
           link
         } = this.whichSubNavLatest();
@@ -2908,7 +2908,7 @@
         submenu
       } = this.whichSubNavLatest();
       if (propertyName !== 'transform') return;
-      getFocusableElementBySelector(submenu.id, ['> div button', '> .nsw-main-nav__title a', '> ul > li > a']).all[2].focus();
+      getFocusableElementBySelector(submenu.id, ['> div button', '> .tn-main-nav__title a', '> ul > li > a']).all[2].focus();
       submenu.removeEventListener(this.transitionEvent, this.showSubNavTransitionEndEvent, false);
     }
     closeSubNav() {
@@ -4682,11 +4682,11 @@
       this.nMultiSelect = this.element.getAttribute('data-n-multi-select') || 1;
       this.noUpdateLabel = this.element.getAttribute('data-update-text') && this.element.getAttribute('data-update-text') === 'off';
       this.insetLabel = this.element.getAttribute('data-inset-label') && this.element.getAttribute('data-inset-label') === 'on';
-      this.hideClass = 'nsw-display-none';
+      this.hideClass = 'tn-display-none';
       this.showClass = 'active';
       this.errorClass = 'has-error';
       this.srClass = 'sr-only';
-      this.prefix = 'nsw-';
+      this.prefix = 'tn-';
       this.class = 'multi-select';
       this.buttonClass = `${this.class}__button`;
       this.allButtonClass = `${this.class}__all`;
@@ -4853,10 +4853,10 @@
       }
     }
     clearAllButton() {
-      if (this.dropdown.querySelector('.nsw-multi-select__clear-all-button')) return;
+      if (this.dropdown.querySelector('.tn-multi-select__clear-all-button')) return;
       const clearButton = document.createElement('button');
       clearButton.textContent = 'Clear all selections';
-      clearButton.className = `${this.prefix}link nsw-multi-select__clear-all-button`;
+      clearButton.className = `${this.prefix}link tn-multi-select__clear-all-button`;
       clearButton.addEventListener('click', e => {
         e.preventDefault();
         this.clearAllSelections();
@@ -4911,7 +4911,7 @@
       const error = this.select.getAttribute('aria-invalid');
       const triggerLabel = this.getSelectedOptionText();
       const activeSelectionClass = this.selectedOptCounter > 0 ? ` ${this.buttonClass}--active` : '';
-      let button = `<button class="js-${this.buttonClass} ${error === 'true' ? this.errorClass : ''} ${this.prefix}${this.selectClass} ${this.prefix}${this.buttonClass}${customClasses}${activeSelectionClass}" aria-label="${triggerLabel[1]}" aria-expanded="false" aria-controls="${this.selectId}-dropdown"><span aria-hidden="true" class="js-${this.labelClass} ${this.prefix}${this.labelClass}">${triggerLabel[0]}</span><span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">keyboard_arrow_down</span>`;
+      let button = `<button class="js-${this.buttonClass} ${error === 'true' ? this.errorClass : ''} ${this.prefix}${this.selectClass} ${this.prefix}${this.buttonClass}${customClasses}${activeSelectionClass}" aria-label="${triggerLabel[1]}" aria-expanded="false" aria-controls="${this.selectId}-dropdown"><span aria-hidden="true" class="js-${this.labelClass} ${this.prefix}${this.labelClass}">${triggerLabel[0]}</span><span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">keyboard_arrow_down</span>`;
       if (this.arrowIcon.length > 0 && this.arrowIcon[0].outerHTML) {
         button += this.arrowIcon[0].outerHTML;
       }
@@ -5042,19 +5042,19 @@
     constructor(element, index) {
       this.element = element;
       this.index = index;
-      this.toggleButton = this.element.querySelector('.nsw-side-nav__toggle');
-      this.sideNavContent = this.element.querySelector('.nsw-side-nav__content');
+      this.toggleButton = this.element.querySelector('.tn-side-nav__toggle');
+      this.sideNavContent = this.element.querySelector('.tn-side-nav__content');
       this.isOpen = false;
     }
     init() {
       this.element.classList.remove('open');
       if (this.sideNavContent && !this.sideNavContent.id) {
-        this.sideNavContent.id = `nsw-side-nav__content-${this.index}`;
+        this.sideNavContent.id = `tn-side-nav__content-${this.index}`;
       }
       if (this.toggleButton) {
         if (!this.toggleButton.querySelector('.material-icons')) {
           const icon = document.createElement('span');
-          icon.classList.add('material-icons', 'nsw-material-icons');
+          icon.classList.add('material-icons', 'tn-material-icons');
           icon.setAttribute('focusable', 'false');
           icon.setAttribute('aria-hidden', 'true');
           icon.textContent = 'keyboard_arrow_right';
@@ -5077,7 +5077,7 @@
   class Tabs {
     constructor(element, showTab) {
       this.element = element;
-      this.tablistClass = '.nsw-tabs__list';
+      this.tablistClass = '.tn-tabs__list';
       this.tablistItemClass = 'li';
       this.tablistLinkClass = 'a';
       this.showTab = showTab;
@@ -5099,7 +5099,7 @@
     }
     setUpDom() {
       const tabListWrapper = document.createElement('div');
-      tabListWrapper.classList.add('nsw-tabs__list-wrapper');
+      tabListWrapper.classList.add('tn-tabs__list-wrapper');
       this.element.prepend(tabListWrapper);
       tabListWrapper.prepend(this.tabList);
       this.tabList.setAttribute('role', 'tablist');
@@ -5321,22 +5321,22 @@
       if (this.toggletipElement) {
         this.toggletipElement.innerHTML = '';
         const createToggletip = `
-      <div class="nsw-toggletip__header">
-        <div id="nsw-toggletip__header" class="sr-only">${cleanHTML(this.toggletipHeading)}</div>
-        <button type="button" class="nsw-icon-button">
+      <div class="tn-toggletip__header">
+        <div id="tn-toggletip__header" class="sr-only">${cleanHTML(this.toggletipHeading)}</div>
+        <button type="button" class="tn-icon-button">
           <span class="sr-only">Remove file</span>
-          <span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">close</span>
+          <span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">close</span>
         </button>
       </div>
-      <div id="nsw-toggletip__content" class="nsw-toggletip__content">
+      <div id="tn-toggletip__content" class="tn-toggletip__content">
         ${cleanHTML(this.toggletipContent)}
       </div>
-      <div class="nsw-toggletip__arrow"></div>`;
+      <div class="tn-toggletip__arrow"></div>`;
         this.toggletipElement.insertAdjacentHTML('afterbegin', createToggletip);
       }
       this.constructor.setAttributes(this.toggletipElement, {
-        'aria-labelledby': 'nsw-toggletip__header',
-        'aria-describedby': 'nsw-toggletip__content',
+        'aria-labelledby': 'tn-toggletip__header',
+        'aria-describedby': 'tn-toggletip__content',
         'aria-expanded': 'false',
         tabindex: '0',
         role: 'dialog'
@@ -5344,8 +5344,8 @@
     }
     showToggletip() {
       this.createToggletipElement();
-      this.arrowElement = this.toggletipElement.querySelector('.nsw-toggletip__arrow');
-      this.closeButton = this.toggletipElement.querySelector('.nsw-icon-button');
+      this.arrowElement = this.toggletipElement.querySelector('.tn-toggletip__arrow');
+      this.closeButton = this.toggletipElement.querySelector('.tn-icon-button');
       this.toggletipElement.setAttribute('aria-expanded', 'true');
       this.toggletipElement.classList.add('active');
       this.toggletipIsOpen = true;
@@ -5520,12 +5520,12 @@
       }
       this.constructor.setAttributes(this.tooltipElement, {
         id: this.uID,
-        class: `nsw-tooltip__element nsw-tooltip__element--${this.tooltipTheme}`,
+        class: `tn-tooltip__element tn-tooltip__element--${this.tooltipTheme}`,
         role: 'tooltip'
       });
       if (this.tooltip) {
         this.arrowElement = document.createElement('div');
-        this.arrowElement.className = 'nsw-tooltip__arrow';
+        this.arrowElement.className = 'tn-tooltip__arrow';
       }
       this.tooltipContent = this.tooltip.getAttribute('data-tooltip-content');
       this.tooltipElement.innerHTML = this.tooltipContent;
@@ -5736,7 +5736,7 @@
     }
     copiedMessage(element) {
       this.copyElement = element;
-      const icon = '<span class="material-icons nsw-material-icons" focusable="false" aria-hidden="true">link</span>';
+      const icon = '<span class="material-icons tn-material-icons" focusable="false" aria-hidden="true">link</span>';
       const originalText = this.copyElement.innerHTML;
       this.copyElement.classList.add('copied');
       this.copyElement.innerHTML = `${icon} Copied`;
