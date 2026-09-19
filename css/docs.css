@@ -4929,7 +4929,7 @@ body {
   background: none;
   border: 0;
   border-radius: var(--nsw-border-radius);
-  color: var(--nsw-brand-dark);
+  color: var(--nsw-white);
   display: inline-block;
   font-size: var(--nsw-font-size-sm-mobile);
   font-weight: var(--nsw-font-bold);
@@ -12653,7 +12653,7 @@ a:active {
 }
 
 .nsw-main-nav {
-  background-color: var(--nsw-white);
+  background-color: var(--nsw-brand-accent);
   height: 100%;
   left: 0;
   overflow-y: auto;
@@ -12824,7 +12824,8 @@ a:active {
 }
 
 .nsw-main-nav__title {
-  font-weight: var(--nsw-font-bold)
+  font-weight: var(--nsw-font-bold);
+  color: var(--nsw-white);
 }
 
 @media (min-width:62rem) {
@@ -12882,7 +12883,7 @@ a:active {
 }
 
 .nsw-main-nav__sub-nav {
-  background-color: var(--nsw-white);
+  background-color: var(--nsw-brand-accent);
   height: 100%;
   left: 0;
   overflow-y: auto;
