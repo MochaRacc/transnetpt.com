@@ -1,6 +1,6 @@
   
 @charset "UTF-8";
-@import url('/css/armin-grotesk.css');
+@import url('/css/transnet-grotesk.css');
 
 html {
   box-sizing: border-box;
@@ -173,7 +173,7 @@ body {
   --nsw-disruption-travel: #3199ba;
   --nsw-disruption-cancelled: #a331ba;
 
-  --nsw-font-family: "Armin Grotesk", sans-serif;
+  --nsw-font-family: "Transnet Grotesk", sans-serif;
   --nsw-font-size: 16px;
   --nsw-line-height: 1.5;
   --nsw-font-normal: 400;
