@@ -119,9 +119,9 @@ body {
   --nsw-text-light: #fff;
   --nsw-text-dark-rgb: 34, 39, 43;
   --nsw-text-light-rgb: 255, 255, 255;
-  --nsw-link: #146414;
+  --nsw-link: #ffef45;
   --nsw-link-light: #fff;
-  --nsw-visited: #238b1a;
+  --nsw-visited: #8b831a;
   --nsw-visited-light: #fff;
   --nsw-hover: rgba(0, 38, 100, .1);
   --nsw-hover-light: hsla(0, 0%, 100%, .1);
