@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Calmetta';
+    src: url('/font/Calmetta-Bold.woff2') format('woff2'),
+        url('/font/Calmetta-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Calmetta';
+    src: url('/font/Calmetta-Light.woff2') format('woff2'),
+        url('/font/Calmetta-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Calmetta';
+    src: url('/font/Calmetta-Regular.woff2') format('woff2'),
+        url('/font/Calmetta-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
